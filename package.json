@@ -1,0 +1,7 @@
+{
+  "urls": [
+    ["AccelStepper.py", "github:anonymousaga/AccelStepper-MicroPython/AccelStepper.py"]
+  ],
+  "version": "1.0.0",
+  "deps": []
+}
