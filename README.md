@@ -1,18 +1,26 @@
-# AccelStepper 
+# AccelStepper
 
-## A stepper motor control library for MicroPython.
+## A stepper motor control library for MicroPython
 
 This class provides an interface for controlling stepper motors with acceleration and speed control.
 It supports multiple stepper driver types and stepping modes including full-step and half-step.
 
-### Key Features:
+### Key Features
 
 - Acceleration and deceleration support
 - Multiple stepping modes (Driver, 2 wire, 3 wire, 4 wire)
 - Position tracking and control
 - Speed control
 
-### Arguments:
+### Installation
+
+Move `AccelStepper.py` to your micropython board. That's it!
+
+### Examples
+
+- [example1.py](docs/example1.py) for basic usage
+
+### Arguments
 
 - **6 arguments**: (`interface`, `pin1`, `pin2`, `pin3` `pin4`, `enable`)
   - `interface` (int): The stepping interface type
@@ -25,7 +33,7 @@ It supports multiple stepper driver types and stepping modes including full-step
   - `pinX` (int): Motor control pins
     - DRIVER: `STEP_PIN, DIR_PIN, 0, 0`
     - 2WIRE: `M1A, M1B, 0, 0`
-    - 3WIRE: `U_Pin, V_Pin, W_Pin,0`
+    - 3WIRE: `U_Pin, V_Pin, W_Pin, 0`
     - 4WIRE: `M1A, M1B, M2A, M2B`
   - `enable` (bool): Whether to enable outputs immediately
     - Doesn't work for seperate enable pin (e.g. `interface = DRIVER`)
@@ -33,7 +41,7 @@ It supports multiple stepper driver types and stepping modes including full-step
   - `forward_func` (callable): Function to call for forward stepping
   - `backward_func` (callable): Function to call for backward stepping
 
-### Properties:
+### Properties
 
 - `_currentPos` (int): Current position of the stepper
 - `_targetPos` (int): Target position to move to
@@ -43,7 +51,7 @@ It supports multiple stepper driver types and stepping modes including full-step
 - `_interface` (int): Type of stepper driver interface
 - `_direction` (int): Current direction of movement
 
-### Methods:
+### Methods
 
 - `move_to(absolute: int) -> None`:
   - Move to absolute position
